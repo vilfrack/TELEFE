@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Examen.Models.Coordenadas>
+@{
+    ViewBag.Title = "Prueba";
+}
+
+
+
+<p>
+    <a href="@Url.Action("Buscar","Home")" class="btn btn-default">buscar palabras</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.coordenadas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.palabra)
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.coordenadas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.palabra)
+            </td>
+        </tr>
+    }
+
+</table>
